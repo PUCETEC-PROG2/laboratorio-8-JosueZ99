@@ -1,11 +1,18 @@
 {% extends "base.html" %}
-{% block title %}{{pokemon}}{% endblock title %}{{pokemon}}
-{% block content %}
-<p>Has elegido el pokemon: <strong>{{ pokemon | capfirst }}</strong></p>
-<h3>Características</h3>
-<ul>
-    <li>Tipo: {{pokemon.type}}</li>   
-    <li>Peso: {{pokemon.weight}} Kg.</li> 
-    <li>Altura: {{pokemon.height}} cm.</li>             
-</ul>
+{% block title%}Pokedex{% endblock title %}
+
+{% block content  %}
+            
+	<p>Has elegido al pokemon: <strong>{{ pokemon | capfirst }}</strong></p>
+            <h3>Características del Pokemon:</h3>
+	    <ul>
+            <li>Tipo: {{pokemon.type}}</li>
+            <li>Peso: {{pokemon.weight}} Kg.</li>
+            <li>Altura: {{pokemon.height}} Cm.</li>
+	    </ul>
+		    <a href ="/">Regresar<a>
+        </div>
+    </body>
+</html>
+
 {% endblock content %}
