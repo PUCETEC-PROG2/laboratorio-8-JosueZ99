@@ -80,7 +80,7 @@ DATABASES = {
 'default':{
 
     'ENGINE':'django.db.backends.postgresql',
-    'NAME':'pokedex',
+    'NAME':'pokedex_josuez',
     'HOST':'localhost',
     'PORT':'5432',
     'USER':'postgres',
