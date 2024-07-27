@@ -3,14 +3,16 @@
 
 {% block content  %}
             
-	<p>Has elegido al pokemon: <strong>{{ pokemon | capfirst }}</strong></p>
+	<h2 class = "mt-3">Has elegido al pokemon: <strong>{{ pokemon | capfirst }}</strong></h2>
+    <img src = "{{ pokemon.picture.url }}" alt = "" height="300px" class = "my-3">
             <h3>Características del Pokemon:</h3>
 	    <ul>
-            <li>Tipo: {{pokemon.type}}</li>
+            <li>Entrenador: {{pokemon.trainer}}</li>
+            <li>Tipo: {{pokemon.get_type_display}}</li>
             <li>Peso: {{pokemon.weight}} Kg.</li>
-            <li>Altura: {{pokemon.height}} Cm.</li>
+            <li>Altura: {{pokemon.height}} cm.</li>
 	    </ul>
-		    <a href ="/">Regresar<a>
+		    <a href ="/" class = "btn btn-primary">Regresar<a>
         </div>
     </body>
 </html>

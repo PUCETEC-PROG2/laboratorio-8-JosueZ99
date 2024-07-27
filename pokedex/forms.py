@@ -7,7 +7,6 @@ class PokemonForm(forms.ModelForm):
         model = Pokemon
         fields = '__all__'
         widgets = {
-
                 'name': forms.TextInput(attrs={'class': 'form-control'}),
                 'type': forms.Select(attrs={'class': 'form-control'}),
                 'weight': forms.TextInput(attrs={'class': 'form-control'}),
