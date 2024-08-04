@@ -1,15 +1,22 @@
 from django.db import models
-
+from datetime import date
 
 class Trainer(models.Model):
     first_name = models.CharField(max_length=30, null=False)
     last_name = models.CharField(max_length=30, null=False)
     birth_date = models.DateField(null=False)
     level = models.IntegerField(default=1)
+    picture = models.ImageField(upload_to='trainer_images', default='trainer_images/default.png')
+
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
 
+    def age(self):
+        today = date.today()
+        age = today.year - self.birth_date.year - ((today.month, today.day) < (self.birth_date.month, self.birth_date.day))
+        return age
+    
 class Pokemon(models.Model):
     name = models.CharField(max_length=30, null=False)
     POKEMON_TYPES = {

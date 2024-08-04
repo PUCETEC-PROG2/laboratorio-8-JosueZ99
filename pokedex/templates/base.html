@@ -9,9 +9,9 @@
     <body>
       <div class="container">
           <div class="bg-primary text-white p-4 text-center">
-              <img src="{%static "logo.svg"%}" class="h-25">
+              <img src="{%static "images/logo.svg"%}" class="h-25">
           </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -21,9 +21,18 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="{% url "pokedex:index" %}">Home</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url "pokedex:pokemon" %}">Pokemon</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url "pokedex:trainer" %}">Trainers</a>
+                </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url "pokedex:add_pokemon" %}">Añadir Pokemon</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url "pokedex:add_trainer" %}">Añadir Trainer</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href={% url "logout" %}>Logout</a>

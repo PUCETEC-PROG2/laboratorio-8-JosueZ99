@@ -1,20 +1,18 @@
 {% extends "base.html" %}
-{% block title%}Pokedex{% endblock title %}
+{% block title%}{{pokemon}}{% endblock title %}
 
 {% block content  %}
             
-	<h2 class = "mt-3">Has elegido al pokemon: <strong>{{ pokemon | capfirst }}</strong></h2>
-    <img src = "{{ pokemon.picture.url }}" alt = "" height="300px" class = "my-3">
-            <h3>Características del Pokemon:</h3>
-	    <ul>
-            <li>Entrenador: {{pokemon.trainer}}</li>
-            <li>Tipo: {{pokemon.get_type_display}}</li>
-            <li>Peso: {{pokemon.weight}} Kg.</li>
-            <li>Altura: {{pokemon.height}} cm.</li>
-	    </ul>
-		    <a href ="/" class = "btn btn-primary">Regresar<a>
-        </div>
-    </body>
-</html>
-
+<h2 class = "mt-3">Has elegido al pokemon: <strong>{{ pokemon | capfirst }}</strong></h2>
+<img src = "{{ pokemon.picture.url }}" alt = "" height="300px" class = "my-3">
+        <h3>Características del Pokemon:</h3>
+    <ul>
+        <li>Entrenador: {{pokemon.trainer}}</li>
+        <li>Tipo: {{pokemon.get_type_display}}</li>
+        <li>Peso: {{pokemon.weight}} Kg.</li>
+        <li>Altura: {{pokemon.height}} cm.</li>
+    </ul>
+        <a href ="/pokemon" class = "btn btn-primary">Regresar<a>
+    </div>
+</body>
 {% endblock content %}
